@@ -1,7 +1,29 @@
-<h2>Sign up</h2>
+<h2>Inscription</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "nom" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "prenom" %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age, autofocus: true, autocomplete: "age" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :addresse %><br />
+    <%= f.text_field :addresse, autofocus: true, autocomplete: "adresse" %>
+  </div>
+
 
   <div class="field">
     <%= f.label :email %><br />
