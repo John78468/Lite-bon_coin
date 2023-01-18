@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: e199b6dd4def391feac529f91a7bf2e2e3a9ea7f
+  branch: main
+  specs:
+    faker (3.1.0)
+      i18n (>= 1.8.11, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -183,6 +191,9 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -227,6 +238,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  faker!
   importmap-rails
   jbuilder
   pg (~> 1.1)
@@ -234,6 +246,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   redis (~> 4.0)
   selenium-webdriver
+  simple_form
   sprockets-rails
   stimulus-rails
   turbo-rails

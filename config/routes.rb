@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'homepages#home'
   #get 'homepages/index'
   #get 'homepages/show'
@@ -8,7 +9,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :products, only: %i[index show update destroy] do
-    resources :posts, only: [:create]
-  end
+  resources :products
 end

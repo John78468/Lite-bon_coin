@@ -1,46 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Lite-bon-coin</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Action
-          </a>
-          <% if user_signed_in? %>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Panier</a></li>
-            <li><a class="dropdown-item" href="#">Favoris</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">deconection</a></li>
-          <% else %>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/users/sign_in">Connection</a></li>
-            <li><a class="dropdown-item" href="/users/sign_up">Inscription</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">mention legale</a></li>
-            <%# <li> <%= link_to "Login", new_user_session_path, class:"dropdown-item" </li> %>
-          <% end %>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <div class="col">
+      <div class="row">
+        <div class="d-flex justify-content-start">
+          <div class="logo py-2 px-0 px-lg-3">
+            <%= link_to "LOGO", root_path %>
+          </div>
+          <button type="button" class="btn btn-primary ml-3 px-0 px-lg-3">Déposer une annonce </button>
+
+        </div>
+        <div class="col-auto d-flex justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Mes recherches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Favoris</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Messages</a>
+            </li>
+            <li class="nav-item dropdown">
+            <% if user_signed_in? %>
+              <%= link_to "Déconnecter", destroy_user_session_path, class: "dropdown-item py-2 px-0 px-lg-3 rounded", data: {turbo_method: :delete} %>
+            </li>
+            <% else %>
+            <li class="nav-item">
+              <%= link_to "Se connecter", new_user_session_path, class: "nav-link py px-0 px-lg-3 rounded" %>
+            </li>
+            <% end %>
+            </li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="recherche" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">recherche</button>
-      </form>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
