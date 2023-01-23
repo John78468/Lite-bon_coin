@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :products
+  get 'my_message', to: 'products#my_message'
 end

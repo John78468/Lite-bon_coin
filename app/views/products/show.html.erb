@@ -1,10 +1,11 @@
 
-  <h1>SHow</h1>
-  <br>
-  <br>
-  <br>
-  <br>
-  <%= @product.name %>
-  <%= @product.description %>
-  <%= @product.price %>
-<h2>edef</h2>
+<div class="container">
+  <h1>Détail du produit</h1>
+  <div class="card my-5">
+    <div class="card-body">
+      <h5 class="card-title"><%= @product.name %></h5>
+      <p class="card-text"><%= @product.description %></p>
+      <h6 class="card-subtitle mb-2 text-muted">Prix: <%= @product.price %>€</h6>
+    </div>
+  </div>
+</div>

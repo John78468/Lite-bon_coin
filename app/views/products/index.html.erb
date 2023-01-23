@@ -1,42 +1,43 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
-
 <div class="container">
   <div class="row">
     <div class="col">
-      <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-      <form class="bg-light border">
-        <div class="form-row d-flex justify-content-center mt-3">
+      <br>
+      <br>
+      <form class="bg-light border p-3 mt-5">
+        <div class="form-row d-flex justify-content-center">
           <div class="form-group col-md-2">
             <select id="inputState" class="form-control">
-              <option selected>Catégories</option>
+              <option selected disabled>Catégories</option>
               <option>...</option>
             </select>
           </div>
-          <div class="form-group col-md-auto">
-            <input type="text" class="form-control" placeholder="Que recherchez-vous?" id="inputZip">
+          <div class="form-group col-md-3">
+            <input type="text" class="form-control" placeholder="Que recherchez-vous?" id="inputSearch">
           </div>
-          <div class="form-group col-md-auto">
-            <input type="text" class="form-control" placeholder="Saisissez une ville" id="inputZip">
+          <div class="form-group col-md-3">
+            <input type="text" class="form-control" placeholder="Saisissez une ville" id="inputCity">
           </div>
-          <div class="form-group col-md-auto">
-            <button class="btn btn-primary">Rechercher</button>
+          <div class="form-group col-md-2">
+            <button class="btn btn-primary btn-block">Rechercher</button>
           </div>
         </div>
       </form>
-      <div class="three-btn mt-3">
-        <button type="button" class="btn btn-outline-primary">Sans livraison</button>
-        <button type="button" class="btn btn-outline-primary">Prix</button>
-        <button type="button" class="btn btn-outline-primary">Tous les filtres</button>
+      <div class="d-flex justify-content-center mt-3">
+        <button type="button" class="btn btn-outline-primary mx-2"></button>
+        <button type="button" class="btn btn-outline-primary mx-2">Sans livraison</button>
+        <button type="button" class="btn btn-outline-primary mx-2">Prix</button>
+        <button type="button" class="btn btn-outline-primary mx-2">Tous les filtres</button>
       </div>
         <% @products.each do |product| %>
-      <div class="card">
-          <%= product.name %>
-          <%= product.description %>
-          <%= product.price %>
+          <div class="card-product">
+            <%= link_to product_path(product) do %>
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <% end %>
+            <div class="card-product-infos">
+              <h2><%= product.name %></h2>
+              <p><%= product.description %><strong>Prix: <%= product.price %>€</strong> only.</p>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>

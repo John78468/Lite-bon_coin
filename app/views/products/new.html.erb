@@ -1,8 +1,18 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
-<%= simple_form_for @product do |f| %>
-  <%= f.input :name, label: "nom" %>
-  <%= f.input :description, label: "description"%>
-  <%= f.input :price, label: "prix"%>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <h1>Créer un nouvelle annonce/h1>
+  <%= simple_form_for @product, html: {class: "form-group"} do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "Nom" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, "Description" %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :price, "Prix" %>
+      <%= f.number_field :price, class: "form-control" %>
+    </div>
+    <%= f.submit "Créer", class: "btn btn-primary" %>
+  <% end %>
+</div>

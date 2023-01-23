@@ -1,39 +1,39 @@
+<div class="navbar navbar-expand-sm">
+  <div class="container-fluid">
+    <div>
+      <%= link_to root_path class: "navbar-brand" do %>
+        <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/6/63/Leboncoin_Logo_%282016%29.svg" %>
+      <% end %>
+      <button type="button" class="btn btn-primary btn-deposer">
+        <%= link_to "Déposer une annonce", new_product_path, class:"text-white" %>
+      </button>
+    </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div class="container">
-    <div class="col">
-      <div class="row">
-        <div class="d-flex justify-content-start">
-          <div class="logo py-2 px-0 px-lg-3">
-            <%= link_to "LOGO", root_path %>
-          </div>
-          <button type="button" class="btn btn-primary ml-3 px-0 px-lg-3">Déposer une annonce </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        </div>
-        <div class="col-auto d-flex justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Mes recherches</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Favoris</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Messages</a>
-            </li>
-            <li class="nav-item dropdown">
-            <% if user_signed_in? %>
-              <%= link_to "Déconnecter", destroy_user_session_path, class: "dropdown-item py-2 px-0 px-lg-3 rounded", data: {turbo_method: :delete} %>
-            </li>
-            <% else %>
-            <li class="nav-item">
-              <%= link_to "Se connecter", new_user_session_path, class: "nav-link py px-0 px-lg-3 rounded" %>
-            </li>
-            <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <%= link_to "Recherches", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Favoris", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Messages", my_message_path , class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+        <% if user_signed_in? %>
+          <%= link_to "Déconnecter", destroy_user_session_path, class: "dropdown-item py-2 px-0 px-lg-3 rounded", data: {turbo_method: :delete} %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "Se connecter", new_user_session_path, class: "nav-link py px-0 px-lg-3 rounded" %>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
-</nav>
+</div>

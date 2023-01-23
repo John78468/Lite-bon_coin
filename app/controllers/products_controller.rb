@@ -23,6 +23,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def my_message
+    @messages = current_user.products.all
+  end
+
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
