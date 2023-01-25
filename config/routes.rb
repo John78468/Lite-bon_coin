@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   resources :products
   get 'my_message', to: 'products#my_message'
+  get 'recept', to: 'products#recept'
 end
