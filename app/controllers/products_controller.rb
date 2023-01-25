@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
   end
 
   def recept
+    @product = Product.find(params[:id])
   end
 
 

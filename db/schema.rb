@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_13_144332) do
     t.string "name"
     t.integer "price"
     t.text "description"
+    t.text "messages"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
