@@ -8,7 +8,7 @@ gem "rails", "~> 7.0.4"
 gem "devise"
 gem 'simple_form'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
-
+gem 'geocoder'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
